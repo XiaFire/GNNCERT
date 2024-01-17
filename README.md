@@ -23,30 +23,41 @@ pip install -r requirements.txt
 
 ## Experments
 
-+ To run GraphGuard with GIN, using command:
+To run GraphGuard with GIN, use the following commands:
 
-```
-# For feauture division
++ For feature division:
+
+```bash
 bash jobs/feature_division.sh
 bash jobs/feature_division-test.sh
+```
 
-# For structure division
+- For structure division:
+
+```bash
 bash jobs/structure_division.sh
 bash jobs/structure_division-test.sh
+```
 
-# For feauture-structure jointly division
+- For feature-structure jointly division:
+
+```bash
 bash jobs/method_structure_feature.sh
 bash jobs/method_structure_feature-test.sh
 ```
 
-+ You can also try different architecture.
+You can also try different architectures, such as GCN and GAT:
 
+- For GCN:
+
+```bash
+bash jobs/GCN.sh
+bash jobs/GCN-test.sh
 ```
-# For GCN
-bash GCN.sh
-bash GCN-test.sh
 
-# For GAT
-bash GAT.sh
-bash GAT-test.sh
+- For GAT:
+
+```bash
+bash jobs/GAT.sh
+bash jobs/GAT-test.sh
 ```
