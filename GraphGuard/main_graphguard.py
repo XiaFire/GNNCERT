@@ -152,7 +152,7 @@ def main():
     device = torch.device("cuda:" + str(args.device)) if torch.cuda.is_available() else torch.device("cpu")
     if torch.cuda.is_available():
         torch.cuda.manual_seed_all(args.seed)
-    print(111)
+    
     graphs, num_classes, _ = load_dataset(args.dataset, args.degree_as_tag)
     train_graphs, test_graphs, _ = separate_data(graphs, args.seed, args.fold_idx, args.fold_n)
 
@@ -178,7 +178,6 @@ def main():
         test_graphs = sum([args.division_func(graph, args) for graph in tqdm(test_graphs)], start=[])
     division_time.append(get_time() - start)
     model_time = []
-    print(111)
     best = 0
     for epoch in tqdm(range(1, args.epochs + 1)):
         avg_loss = train(args, model, device, train_graphs, optimizer, epoch, criterion, model_time)
@@ -189,7 +188,7 @@ def main():
                 torch.save(model.state_dict(), args.model_weight)
             print(f"{epoch},{avg_loss},{acc_train},{acc_test}\n")
     # save model
-    # torch.save(model.state_dict(), args.model_weight)
+    torch.save(model.state_dict(), args.model_weight)
     print(f"{model_time=:}\n{division_time=:}", file=open(f"train_time_{args.dataset}.txt", "w"))
 if __name__ == '__main__':
     main()

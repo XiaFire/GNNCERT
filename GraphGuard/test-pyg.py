@@ -212,7 +212,7 @@ def get_pred_matrix_params(args, model, device, test_graphs, sub_func, **kwargs)
 
     output = get_model_output(args, model, device, test_graphs, sub_func, **kwargs)
     output = output.reshape(n_initial, n, -1)
-    print(output.shape)
+    
     classes = output.shape[-1]
     output = output.argmax(axis=-1)
 
@@ -349,7 +349,6 @@ def main():
     elif args.defense_method == "RS":
         args.alpha = 0.001
         pred, matrix, params = get_pred_matrix_params(args, model, device, test_graphs, adversarial_train_test, tag2index=None, d=args.num_group)
-        print(matrix.shape)
         Mp = get_Mp_RS(matrix, params, args)
         for size in range(int(Mp[Mp!=np.inf].max()+1)):
             sizes.append(size)

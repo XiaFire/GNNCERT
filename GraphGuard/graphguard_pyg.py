@@ -179,7 +179,6 @@ def main():
     for epoch in track(range(1, args.epochs + 1)):
         avg_loss = train(args, model, device, train_loader, optimizer, epoch, criterion, model_time)
         if epoch % 100 == 0:
-            print(model_time)
             acc_train, acc_test = test(args, model, device, train_graphs, test_graphs)
             with open(args.filename, 'a+') as f:
                 f.write(f"{epoch},{avg_loss},{acc_train},{acc_test}\n")

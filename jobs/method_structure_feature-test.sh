@@ -9,8 +9,8 @@ DEGREE_AS_TAG=0
 HASH_METHOD='md5'
 GPU='0'
 
-for DATASET in  'ENZYMES'; do
-for NUM_GROUP in 3; do
+for DATASET in  'MUTAG' 'PROTEINS_full' 'ENZYMES'; do
+for NUM_GROUP in 30; do
 NAME="GG_DS_${DATASET}_EPOCH_${EPOCH_GG}_SEED_${SEED}_FOLDN_3_FM_${FEATURES_METHOD}_DAT_${DEGREE_AS_TAG}_HM_${HASH_METHOD}_NG_${NUM_GROUP}" 
 mkdir -p "./saved_model/${NAME}"
 mkdir -p "./new_results/${NAME}"
