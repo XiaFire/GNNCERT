@@ -1,6 +1,6 @@
-# GraphGuard: Provably Robust Graph Classification against Adversarial Attacks
+# GNNCert: Deterministic Certification of Graph Neural Networks against Adversarial Perturbations
 
-An official PyTorch implementation of "[GraphGuard: Provably Robust Graph Classification against Adversarial Attacks](https://openreview.net/forum?id=IGzaH538fz)" (ICLR 2024).
+An official PyTorch implementation of "[GNNCert: Deterministic Certification of Graph Neural Networks against Adversarial Perturbations](https://openreview.net/forum?id=IGzaH538fz)" (ICLR 2024).
 
 This code is based on the official GIN implementation: https://github.com/weihua916/powerful-gnns.
 
@@ -23,7 +23,7 @@ pip install -r requirements.txt
 
 ## Experments
 
-To run GraphGuard with GIN, use the following commands:
+To run GNNCert with GIN, use the following commands:
 
 + For feature division:
 
